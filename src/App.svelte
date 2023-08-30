@@ -9,7 +9,6 @@
   let menu = Menu;
   let darkmode = false
   let lang = 'en'
-  let clicked = 'nothing yet';
 
   $: translate = language[lang].translation
 </script>
@@ -27,7 +26,7 @@
     <Label>{language[lang].name}</Label>
   </Button>
   <Menu bind:this={menu}>
-  {#each Object.keys(language) as lng,index(`lang-${index}`)}
+  {#each Object.keys(language) as lng, index (`lang-${index}`)}
     <List>
       <Item on:SMUI:action={() => {
         lang = lng
