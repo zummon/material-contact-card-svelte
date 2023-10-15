@@ -6,6 +6,7 @@
   let route = 'goal';
 
   $: translate = language[lang].translation
+  $: document.documentElement.classList.toggle('dark', darkmode)
 </script>
 
 <div class="flex flex-wrap justify-between p-4 mx-auto max-w-3xl">
@@ -13,11 +14,11 @@
     <h2 class="block font-sans text-4xl font-semibold leading-[1.3] tracking-normal text-inherit antialiased">
       {translate["headline"]}
     </h2>
-    <a 
-      href="https://zummon.page/" 
-      target="_blank"
+    <a
       class="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       data-ripple-dark="true"
+      href="https://zummon.page/" 
+      target="_blank"
     >
       {translate["sub-headline"]}
     </a>
@@ -26,21 +27,21 @@
     <div class="mb-4">
       <div class="inline-flex items-center">
         <label
+          class="mt-px mr-3 mb-0 cursor-pointer select-none font-light"
           for="setting-dark-mode"
-          class="mt-px mr-3 mb-0 cursor-pointer select-none font-light text-gray-700"
         >
           {translate["toggle-dark-mode"]}
         </label>
         <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
           <input
-            id="setting-dark-mode"
-            type="checkbox"
             class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+            type="checkbox"
+            id="setting-dark-mode"
             bind:checked={darkmode}
           />
           <label
-            for="setting-dark-mode"
             class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+            for="setting-dark-mode"
           >
             <div
               class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
@@ -51,19 +52,36 @@
       </div>
     </div>
     <div class="">
-      <div class="relative h-10 w-72 min-w-[200px]">
-        <select class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-          id="setting-lang"
+      <span class="mr-3">
+        {translate["change-language"]}
+      </span>
+      <div class="">
+        <button
+          class="middle none center mr-3 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          data-ripple-light="true"
+          data-popover-target="menu"
+        >
+          {language[lang].name}
+        </button>
+        <ul
+          class="absolute z-50 min-w-[120px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+          role="menu"
+          data-popover="menu"
+          data-popover-placement="bottom"
         >
           {#each Object.keys(language) as value, index (`lang-${index}`)}
-            <option value={value}>{language[value].name}</option>
+            <li
+              class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+              role="menuitem"
+            >
+              <button 
+                on:click={() => { lang = value }}
+              >
+                {language[value].name}
+              </button>
+            </li>
           {/each}
-        </select>
-        <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
-          for="setting-lang"
-        >
-          {translate["change-language"]}
-        </label>
+        </ul>
       </div>
     </div>
   </div>
@@ -111,7 +129,7 @@
         </button>
       </li>
     </ul>
-    <div data-tab-content="" class="p-5">
+    <div class="p-5" data-tab-content="">
       <div class="block opacity-100" id="about" role="tabpanel">
         <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
           {translate["about-detail"]}
