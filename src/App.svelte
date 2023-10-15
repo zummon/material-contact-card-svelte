@@ -10,9 +10,9 @@
 
 <div class="flex flex-wrap justify-between p-4 mx-auto max-w-3xl">
   <div class="">
-    <h1 class="block font-sans text-5xl font-semibold leading-tight tracking-normal text-inherit antialiased">
+    <h2 class="block font-sans text-4xl font-semibold leading-[1.3] tracking-normal text-inherit antialiased">
       {translate["headline"]}
-    </h1>
+    </h2>
     <a 
       href="https://zummon.page/" 
       target="_blank"
