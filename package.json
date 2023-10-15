@@ -7,21 +7,14 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"@smui/button": "^7.0.0-beta.14",
-		"@smui/card": "^7.0.0-beta.14",
-		"@smui/form-field": "^7.0.0-beta.14",
-		"@smui/layout-grid": "^7.0.0-beta.14",
-		"@smui/list": "^7.0.0-beta.14",
-		"@smui/menu": "^7.0.0-beta.14",
-		"@smui/paper": "^7.0.0-beta.14",
-		"@smui/switch": "^7.0.0-beta.14",
-		"@smui/tab": "^7.0.0-beta.14",
-		"@smui/tab-bar": "^7.0.0-beta.14",
 		"@sveltejs/vite-plugin-svelte": "^2.4.4",
+		"autoprefixer": "^10.4.16",
+		"postcss": "^8.4.31",
 		"svelte": "^4.1.2",
+		"tailwindcss": "^3.3.3",
 		"vite": "^4.4.9"
 	},
 	"dependencies": {
-		"svelte-material-ui": "^7.0.0-beta.14"
+		"@material-tailwind/html": "^2.0.0"
 	}
 }
