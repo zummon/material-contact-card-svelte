@@ -1,5 +1,6 @@
 <script>
   import language from './language.json'
+  import MySvg from './MySvg.svelte';
 
   let darkmode = false
   let lang = 'en'
@@ -13,6 +14,10 @@
 <svelte:head>
   <link href={language[lang].fontFamilySrc} rel="stylesheet">
 </svelte:head>
+
+<div class="text-center">
+  {translate["translate-by"]}
+</div>
 
 <div class="" style:font-family={language[lang].fontFamily}>
   <div class="flex flex-wrap justify-between items-baseline p-4 mx-auto max-w-3xl gap-4">
@@ -156,6 +161,9 @@
       </ul>
       <div class="p-5" data-tab-content="">
         <div class={route == 'about' ? 'block opacity-100' : 'hidden opacity-0'} id="about" role="tabpanel">
+          <div class="mx-auto mb-4 text-pink-500" style="height: 120px; width: 120px">
+            <MySvg></MySvg>
+          </div>
           <p class="block text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
             {translate["about-detail"]}
           </p>
@@ -166,6 +174,13 @@
           </p>
         </div>
         <div class={route == 'contact' ? 'block opacity-100' : 'hidden opacity-0'} id="contact" role="tabpanel">
+          <iframe
+            class="border-0 rounded block mx-auto max-w-full mb-4"
+            style="height: 300px; width: 400px"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12605.205205101372!2d-82.85086127234254!3d37.82983162410789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sth!4v1616864581381!5m2!1sen!2sth"
+            loading="lazy"
+            title=""
+          />
           <p class="block text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
             {translate["contact-detail"]}
           </p>
