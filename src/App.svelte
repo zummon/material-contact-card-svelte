@@ -26,7 +26,7 @@
         {translate["headline"]}
       </h2>
       <a
-        class="middle none center rounded-lg py-3 px-2 font-bold text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        class="middle none center rounded-lg py-3 px-2 font-bold text-pink-500 dark:text-light-green-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 dark:hover:bg-light-green-500/10 dark:active:bg-light-green-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         data-ripple-dark="true"
         href="https://zummon.page/" 
         target="_blank"
@@ -45,13 +45,13 @@
           </label>
           <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
             <input
-              class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+              class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 dark:checked:bg-light-green-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500 dark:peer-checked:border-light-green-500 dark:peer-checked:before:bg-light-green-500"
               type="checkbox"
               id="setting-dark-mode"
               bind:checked={darkmode}
             />
             <label
-              class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+              class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500 dark:peer-checked:border-light-green-500 dark:peer-checked:before:bg-light-green-500"
               for="setting-dark-mode"
             >
               <div
@@ -75,7 +75,7 @@
               {translate["change-language"]}
             </span>
             <span 
-              class="middle none center rounded-lg py-3 px-2 font-bold text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              class="middle none center rounded-lg py-3 px-2 font-bold text-pink-500 dark:text-light-green-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 dark:hover:bg-light-green-500/10 dark:active:bg-light-green-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
               data-ripple-light="true"
             >
               {language[lang].name}
@@ -161,7 +161,7 @@
       </ul>
       <div class="p-5" data-tab-content="">
         <div class={route == 'about' ? 'block opacity-100' : 'hidden opacity-0'} id="about" role="tabpanel">
-          <div class="mx-auto mb-4 text-pink-500" style="height: 120px; width: 120px">
+          <div class="mx-auto mb-4 text-pink-500 dark:text-light-green-500" style="height: 120px; width: 120px">
             <MySvg></MySvg>
           </div>
           <p class="block text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
