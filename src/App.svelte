@@ -22,11 +22,11 @@
 <div class="" style:font-family={language[lang].fontFamily}>
   <div class="flex flex-wrap justify-between items-baseline p-4 mx-auto max-w-3xl gap-4">
     <div class="">
-      <h2 class="block text-4xl font-semibold leading-[1.3] tracking-normal text-inherit antialiased mb-2">
+      <h2 class="block text-4xl leading-[1.3] tracking-normal text-inherit antialiased mb-2">
         {translate["headline"]}
       </h2>
       <a
-        class="middle none center rounded-lg py-3 px-2 font-bold text-pink-500 dark:text-light-green-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 dark:hover:bg-light-green-500/10 dark:active:bg-light-green-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        class="middle none center rounded-lg py-3 px-2 text-[#651fff] dark:text-[#00e676] transition-all hover:bg-[#651fff]/10 active:bg-[#651fff]/30 dark:hover:bg-[#00e676]/10 dark:active:bg-[#00e676]/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         data-ripple-dark="true"
         href="https://zummon.page/" 
         target="_blank"
@@ -38,20 +38,20 @@
       <div class="mr-4">
         <div class="inline-flex items-center">
           <label
-            class="mt-px mr-3 mb-0 cursor-pointer select-none font-light"
+            class="mt-px mr-3 mb-0 cursor-pointer select-none"
             for="setting-dark-mode"
           >
             {translate["toggle-dark-mode"]}
           </label>
           <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
             <input
-              class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 dark:checked:bg-light-green-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500 dark:peer-checked:border-light-green-500 dark:peer-checked:before:bg-light-green-500"
+              class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-[#651fff] dark:checked:bg-[#00e676] peer-checked:border-[#651fff] peer-checked:before:bg-[#651fff] dark:peer-checked:border-[#00e676] dark:peer-checked:before:bg-[#00e676]"
               type="checkbox"
               id="setting-dark-mode"
               bind:checked={darkmode}
             />
             <label
-              class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500 dark:peer-checked:border-light-green-500 dark:peer-checked:before:bg-light-green-500"
+              class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-[#651fff] peer-checked:before:bg-[#651fff] dark:peer-checked:border-[#00e676] dark:peer-checked:before:bg-[#00e676]"
               for="setting-dark-mode"
             >
               <div
@@ -75,14 +75,14 @@
               {translate["change-language"]}
             </span>
             <span 
-              class="middle none center rounded-lg py-3 px-2 font-bold text-pink-500 dark:text-light-green-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 dark:hover:bg-light-green-500/10 dark:active:bg-light-green-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              class="middle none center rounded-lg py-3 px-2 text-[#651fff] dark:text-[#00e676] transition-all hover:bg-[#651fff]/10 active:bg-[#651fff]/30 dark:hover:bg-[#00e676]/10 dark:active:bg-[#00e676]/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
               data-ripple-light="true"
             >
               {language[lang].name}
             </span>
           </button>
           <ul
-            class="absolute z-50 overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none dark:bg-gray-900 dark:border-gray-800"
+            class="absolute z-50 overflow-auto rounded-md border border-blue-gray-50 bg-white py-2 font-normal shadow-lg shadow-blue-gray-500/10 focus:outline-none dark:bg-gray-900 dark:border-gray-800"
             class:hidden={showSetLang}
             role="menu"
             id="setting-lang"
@@ -161,15 +161,15 @@
       </ul>
       <div class="p-5" data-tab-content="">
         <div class={route == 'about' ? 'block opacity-100' : 'hidden opacity-0'} id="about" role="tabpanel">
-          <div class="mx-auto mb-4 text-pink-500 dark:text-light-green-500" style="height: 120px; width: 120px">
+          <div class="mx-auto mb-4 text-[#651fff] dark:text-[#00e676]" style="height: 120px; width: 120px">
             <MySvg></MySvg>
           </div>
-          <p class="block text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+          <p class="block text-base leading-relaxed text-inherit text-blue-gray-500 antialiased">
             {translate["about-detail"]}
           </p>
         </div>
         <div class={route == 'goal' ? 'block opacity-100' : 'hidden opacity-0'} id="goal" role="tabpanel">
-          <p class="block text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+          <p class="block text-base leading-relaxed text-inherit text-blue-gray-500 antialiased">
             {translate["goal-detail"]}
           </p>
         </div>
@@ -181,7 +181,7 @@
             loading="lazy"
             title=""
           />
-          <p class="block text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+          <p class="block text-base leading-relaxed text-inherit text-blue-gray-500 antialiased">
             {translate["contact-detail"]}
           </p>
         </div>
